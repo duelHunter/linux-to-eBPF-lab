@@ -15,3 +15,5 @@ Verify
 ls -l
 ```
 result is ```-rwxr-xr-x```
+
+chown [OPTIONS] USER[:GROUP] FILE_OR_DIRECTORY
