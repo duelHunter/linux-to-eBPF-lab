@@ -1,5 +1,6 @@
 Run:
 
+tell Linux to pause the current process for 1000 seconds
 ```bash
 sleep 1000
 ```
