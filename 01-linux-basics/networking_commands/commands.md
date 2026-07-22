@@ -15,8 +15,28 @@ wget <url>
 
 ### `ip a` (or `ifconfig`)
 - Lists network interfaces (`lo`, `eth0`, `wlan0`, ...) and the IP address bound to each.
+```bash
+lahiru@DuelHunter:/mnt/d/linux-to-eBPF-lab$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet 10.255.255.254/32 brd 10.255.255.254 scope global lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000
+    link/ether 00:15:5d:8d:33:51 brd ff:ff:ff:ff:ff:ff
+    inet 172.27.137.201/20 brd 172.27.143.255 scope global eth0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::215:5dff:fe8d:3351/64 scope link 
+       valid_lft forever preferred_lft forever
+```
+
 - `inet` = IPv4 address, `inet6` = IPv6 address.
 - `lo` is the loopback interface (`127.0.0.1`), always present, used for local-only traffic.
+
+
 
 ### `ip route` (or `route -n`)
 - Shows the routing table: which gateway/interface traffic goes out through for a given destination.
