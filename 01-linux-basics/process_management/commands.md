@@ -25,7 +25,7 @@ pgrep sleep
 Kill the process:
 
 ```bash
-kill <PID>       # sends SIGTERM (15) - polite request to stop
+kill <PID>       # sends SIGTERM (15) - polite request to stop(Signal to Terminate)
 kill -9 <PID>    # sends SIGKILL (9) - force kill, cannot be ignored
 ```
 
@@ -57,3 +57,40 @@ Seen in the `STAT` column of `ps aux` / `top`:
   - `SIGKILL (9)` - force-terminate immediately; cannot be caught, blocked, or ignored (kernel does it directly).
   - `SIGSTOP` / `SIGCONT` - pause and resume a process.
 - Prefer `SIGTERM` first so the process can clean up (close files, save state); only use `-9` if it doesn't respond.
+
+## How SIGTERM works?
+Suppose an Express web server is running, 
+  ```bash
+  lahiru      2208  0.2  0.6 617536 55532 pts/0    Sl+  23:23   0:00 node server.js
+  ```
+
+You send a SIGTERM,
+  ```bash
+  kill 2208
+  ```
+
+The OS sends:
+  ```bash
+  SIGTERM
+    │
+    ▼
+  Express Server
+  ```
+When the kill command is run, you can observe the server exits **gracefully**.:
+  ```bash
+  lahiru@DuelHunter:/mnt/d/linux-to-eBPF-lab/server$ node server.js
+  Server running on http://localhost:3000
+
+  SIGTERM received!
+  HTTP server closed.
+  Cleanup complete.
+  ```
+
+When the server receives the signal and can decide what to do before exiting.
+For example, it can:
+  - Finish current requests
+  - Save data
+  - Close database connections
+  - Close log files
+  - Release resources
+  - Exit cleanly
