@@ -1,6 +1,9 @@
+# Process management commands
+
 Run:
 
-tell Linux to pause the current process for 1000 seconds
+Tell Linux to pause the current process for 1000 seconds.
+
 ```bash
 sleep 1000
 ```
@@ -25,18 +28,21 @@ pgrep sleep
 Kill the process:
 
 ```bash
-kill <PID>       # sends SIGTERM (15) - polite request to stop(Signal to Terminate)
-kill -9 <PID>    # sends SIGKILL (9) - force kill, cannot be ignored
+kill <PID>    # sends SIGTERM (15) - polite request to stop
+kill -9 <PID> # sends SIGKILL (9) - force kill, cannot be ignored
 ```
 
 ## Document
 
 ### PID
-- PID = Process ID, a unique number the kernel assigns to every running process.
+
+- PID = Process ID, a unique number the kernel assigns to every running
+  process.
 - `ps aux` and `pgrep <name>` are the easiest ways to find it.
 - PPID (parent PID) shows which process spawned it.
 
 ### Process state
+
 Seen in the `STAT` column of `ps aux` / `top`:
 
 | Code | Meaning |
@@ -47,7 +53,7 @@ Seen in the `STAT` column of `ps aux` / `top`:
 | T | Stopped (e.g. via `Ctrl+Z` or `SIGSTOP`) |
 | Z | Zombie (finished but not yet reaped by parent) |
 
-`sleep 1000` shows up as `S` since it's idle, waiting for its timer.
+`sleep 1000` shows up as `S` since it is idle, waiting for its timer.
 
 ### Signal handling
 - Signals are how processes are told to do something (terminate, pause, reload config, etc.).
@@ -64,10 +70,11 @@ Suppose an Express web server is running,
   lahiru      2208  0.2  0.6 617536 55532 pts/0    Sl+  23:23   0:00 node server.js
   ```
 
-You send a SIGTERM,
-  ```bash
-  kill 2208
-  ```
+You send a SIGTERM:
+
+```bash
+kill 2208
+```
 
 The OS sends:
   ```bash
@@ -86,11 +93,12 @@ When the kill command is run, you can observe the server exits **gracefully**.:
   Cleanup complete.
   ```
 
-When the server receives the signal and can decide what to do before exiting.
+When the server receives the signal, it can decide what to do before exiting.
 For example, it can:
-  - Finish current requests
-  - Save data
-  - Close database connections
-  - Close log files
-  - Release resources
-  - Exit cleanly
+
+- Finish current requests
+- Save data
+- Close database connections
+- Close log files
+- Release resources
+- Exit cleanly

@@ -1,8 +1,10 @@
 # Linux → eBPF Systems Learning Lab
 
-This repository is my hands-on learning journey from Linux fundamentals to advanced kernel observability using eBPF.
+This repository is my hands-on learning journey from Linux fundamentals to
+advanced kernel observability using eBPF.
 
-The goal is not just theory, but **practical understanding through experiments, scripts, and small projects**.
+The goal is not just theory, but **practical understanding through
+experiments, scripts, and small projects**.
 
 ---
 
@@ -22,6 +24,7 @@ To understand how modern systems work internally:
 ## 🧭 Learning Roadmap
 
 ### 1. Linux Fundamentals
+
 - File system navigation
 - Permissions and users
 - Process management
@@ -33,6 +36,7 @@ To understand how modern systems work internally:
 ---
 
 ### 2. Operating System Concepts
+
 - Processes vs threads
 - Memory management
 - System calls
@@ -43,6 +47,7 @@ To understand how modern systems work internally:
 ---
 
 ### 3. Networking Basics
+
 - TCP/IP model
 - DNS resolution
 - HTTP requests
@@ -53,6 +58,7 @@ To understand how modern systems work internally:
 ---
 
 ### 4. Docker & Containers
+
 - Container basics
 - Images and layers
 - Namespaces and cgroups
@@ -63,6 +69,7 @@ To understand how modern systems work internally:
 ---
 
 ### 5. Observability Tools
+
 - Metrics collection
 - Prometheus basics
 - Grafana dashboards
@@ -73,12 +80,14 @@ To understand how modern systems work internally:
 ---
 
 ### 6. eBPF Exploration
+
 - Introduction to eBPF
 - Tracing system calls
 - Network monitoring
 - Performance analysis
 
 Tools:
+
 - bpftrace
 - BCC (BPF Compiler Collection)
 
@@ -89,6 +98,7 @@ Tools:
 ## 🧪 Project Style
 
 Each folder contains:
+
 - Small experiments
 - Code snippets (Python / Bash)
 - Notes and explanations
