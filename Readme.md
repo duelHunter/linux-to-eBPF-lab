@@ -4,135 +4,358 @@ This repository is my hands-on learning journey from Linux fundamentals to
 advanced kernel observability using eBPF.
 
 The goal is not just theory, but **practical understanding through
-experiments, scripts, and small projects**.
+experiments, scripts, debugging, and real-world projects**.
 
 ---
 
 ## 🎯 Objective
 
-To understand how modern systems work internally:
+To understand how modern computing systems work internally:
 
 - Linux operating system internals
-- Networking fundamentals
+- Shell and system administration
 - Process and memory behavior
+- Networking fundamentals
 - Container systems (Docker)
 - Observability (metrics, logs, traces)
-- eBPF-based kernel tracing
+- Kernel-level tracing using eBPF
 
 ---
 
-## 🧭 Learning Roadmap
+# 🧭 Learning Roadmap
 
-### 1. Linux Fundamentals
+## 1. Linux Fundamentals
 
+**Goal:** Build strong Linux foundations.
+
+Topics:
+
+- Linux filesystem hierarchy
 - File system navigation
-- Permissions and users
+- File permissions
+- Users and groups
+- Package management
+- Environment variables
 - Process management
-- Networking commands
+- Service management
 - System logs
+
+Commands:
+
+- `ls`
+- `cd`
+- `pwd`
+- `find`
+- `chmod`
+- `chown`
+- `ps`
+- `systemctl`
+- `journalctl`
 
 📁 Folder: `01-linux-basics`
 
 ---
 
-### 2. Operating System Concepts
+## 2. Shell & System Administration
+
+**Goal:** Understand how users interact with Linux systems.
+
+Topics:
+
+- Bash fundamentals
+- Shell vs terminal
+- Shell builtins vs external commands
+- Command execution flow
+- PATH and command lookup
+- Aliases and functions
+- Bash scripting
+- SSH
+- Cron jobs
+- User management
+
+Commands:
+
+- `type`
+- `which`
+- `export`
+- `alias`
+- `ssh`
+- `crontab`
+
+📁 Folder: `02-shell-admin`
+
+---
+
+## 3. Operating System Concepts
+
+**Goal:** Understand what happens underneath Linux commands.
+
+Topics:
 
 - Processes vs threads
-- Memory management
+- Process lifecycle
+- Fork and exec
 - System calls
-- Scheduling
+- CPU scheduling
+- Memory management
+- Virtual memory
+- File descriptors
+- Signals
 
-📁 Folder: `02-os-concepts`
+Tools:
+
+- `strace`
+- `lsof`
+- `vmstat`
+- `free`
+
+📁 Folder: `03-os-concepts`
 
 ---
 
-### 3. Networking Basics
+## 4. Networking Fundamentals
+
+**Goal:** Understand communication between systems.
+
+Topics:
 
 - TCP/IP model
+- OSI model
+- IP addressing
+- Routing basics
 - DNS resolution
-- HTTP requests
-- Sockets programming
+- HTTP/HTTPS
+- TCP handshake
+- UDP
+- Socket programming
 
-📁 Folder: `03-networking`
+Tools:
+
+- `ip`
+- `ss`
+- `netstat`
+- `ping`
+- `curl`
+- `dig`
+- `tcpdump`
+
+📁 Folder: `04-networking`
 
 ---
 
-### 4. Docker & Containers
+## 5. Docker & Containers
 
-- Container basics
-- Images and layers
-- Namespaces and cgroups
+**Goal:** Understand how modern applications are packaged and executed.
+
+Topics:
+
+- Container fundamentals
+- Docker images
+- Image layers
+- Container lifecycle
+- Namespaces
+- cgroups
+- Container networking
 - Container monitoring
+- Container security basics
 
-📁 Folder: `04-containers`
+Tools:
 
----
+- Docker
+- containerd
+- runc
 
-### 5. Observability Tools
-
-- Metrics collection
-- Prometheus basics
-- Grafana dashboards
-- Logging strategies
-
-📁 Folder: `05-observability`
+📁 Folder: `05-containers`
 
 ---
 
-### 6. eBPF Exploration
+## 6. Observability Engineering
 
-- Introduction to eBPF
-- Tracing system calls
-- Network monitoring
+**Goal:** Learn how production systems are monitored and debugged.
+
+Topics:
+
+### Metrics
+
+- Metrics concepts
+- Time-series databases
+- Prometheus architecture
+- Exporters
+- Alerting rules
+
+### Logging
+
+- Linux logs
+- Application logs
+- Log collection strategies
+
+### Tracing
+
+- Distributed tracing
+- Request lifecycle analysis
+- OpenTelemetry basics
+
+Tools:
+
+- Prometheus
+- Grafana
+- Loki
+- OpenTelemetry
+
+📁 Folder: `06-observability`
+
+---
+
+## 7. eBPF & Kernel Observability
+
+**Goal:** Understand and observe Linux kernel behavior.
+
+Topics:
+
+### eBPF Fundamentals
+
+- What is eBPF?
+- eBPF architecture
+- eBPF programs
+- eBPF maps
+- eBPF verifier
+- Kernel hooks
+
+
+### Kernel Tracing
+
+- System call tracing
+- Process monitoring
+- File access tracing
 - Performance analysis
+
+
+### Network Observability
+
+- Packet monitoring
+- XDP basics
+- Network performance analysis
+
 
 Tools:
 
 - bpftrace
 - BCC (BPF Compiler Collection)
+- Cilium
+- Falco
 
-📁 Folder: `06-ebpf`
+📁 Folder: `07-ebpf`
 
 ---
 
-## 🧪 Project Style
+# 🧪 Projects
+
+Practical projects to combine concepts:
+
+## Process Monitor
+
+Build a Linux process monitoring tool.
+
+Concepts:
+
+- `/proc` filesystem
+- Process statistics
+- CPU and memory usage
+
+
+---
+
+## Network Analyzer
+
+Analyze network behavior.
+
+Concepts:
+
+- TCP connections
+- Packet inspection
+- Socket programming
+
+
+---
+
+## Container Monitoring System
+
+Monitor Docker containers.
+
+Track:
+
+- CPU usage
+- Memory usage
+- Network activity
+
+
+---
+
+## eBPF System Tracer
+
+Create kernel-level monitoring tools.
+
+Observe:
+
+- Process creation
+- System calls
+- File operations
+- Network events
+
+
+📁 Folder: `08-projects`
+
+---
+
+# 🧪 Project Style
 
 Each folder contains:
 
 - Small experiments
 - Code snippets (Python / Bash)
+- Configuration files
 - Notes and explanations
-- Output examples
+- Command outputs
+- Debugging examples
 - Key learnings
 
 ---
 
-## 🛠 Tools Used
+# 🛠 Tools Used
 
 - Linux (Ubuntu recommended)
-- Python
 - Bash
+- Python
 - Docker
+- Git
 - bpftrace
 - BCC tools
-- Prometheus & Grafana (optional)
+- Prometheus
+- Grafana
+- OpenTelemetry
 
 ---
 
-## 📌 Goal
+# 📌 Learning Goals
 
-By the end of this repo, I should be able to:
+By the end of this repository, I should be able to:
 
-- Understand how Linux really works internally
-- Debug system performance issues
-- Observe applications without modifying code
+- Understand Linux internals
+- Explain how commands execute
+- Debug Linux systems
+- Analyze processes and memory behavior
 - Understand container internals
-- Use eBPF for real-world tracing and monitoring
+- Build observability solutions
+- Monitor applications without modifying their code
+- Use eBPF for kernel-level tracing
+- Diagnose performance problems in production systems
 
 ---
 
-## 🚀 Status
+# 🚀 Status
 
-Currently in progress. Learning by building.
+Currently in progress.
+
+Learning by building, experimenting, and documenting.
 
 ---
