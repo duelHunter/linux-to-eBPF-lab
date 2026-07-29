@@ -1,4 +1,25 @@
+Complete hardware review:
+```bash
+sudo lshw
+```
+
+A shorter, easier-to-read version:
+```bash
+sudo lshw -short
+```
+
+Show only selected hardware:
+```bash
+sudo lshw -class processor
+sudo lshw -class memory
+sudo lshw -class disk
+sudo lshw -class network
+sudo lshw -class display
+```
+
 # CPU
+
+This `lscpu` command gives CPU hardware details of your machine.
 ```bash
 lahiru-here@blackbox-Z790-EAGLE-AX:~$ lscpu
 Architecture:                x86_64
@@ -56,10 +77,21 @@ Vulnerabilities:
   Tsa:                       Not affected
   Tsx async abort:           Not affected
   Vmscape:                   Mitigation; IBPB before exit to userspace
-```  
+``` 
+Let's explore above output:
+- This CPU use 64-bit and x86 architecture.
+- This CPU can operate on both 64-bit and 32-bit execution modes.
+
+```bash
+uname -m
+```
 
 
 # GPU
+
+```bash
+lspci | grep -Ei "vga|3d|display"
+```
 ```bash
 lahiru-here@blackbox-Z790-EAGLE-AX:~$ nvidia-smi
 Wed Jul 29 12:56:20 2026       
@@ -97,6 +129,35 @@ Wed Jul 29 12:56:20 2026
 |    0   N/A  N/A         3732587    C+G   /usr/bin/nautilus                        54MiB |
 |    0   N/A  N/A         4071533      G   ...rack-uuid=3190708988185955192        126MiB |
 +-----------------------------------------------------------------------------------------+
+```
+
+
+More compact live monitoring:
+```bash
+nvidia-smi dmon
+```
+
+# RAM
+
+Show current memory usage:
+```bash
+free -h
+```
+
+cat /proc/meminfo
+
+sudo dmidecode --type memory
+
+
+# Storage devices
+
+```bash
+lsblk
+```
+
+Show disk usage:
+```bash
+df -h
 ```
 
 
