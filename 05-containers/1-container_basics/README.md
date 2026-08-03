@@ -35,4 +35,4 @@ Lab 2: Create a custom Docker Image built from a Dockerfile and push it to a cen
 
 Lab 3: Deploy containers using Docker swarm and learn how Docker Swarm helps solve problems such as reconciliation, scaling, high availability and service discovery. In this lab, you'll use Play-with-Docker for a multi-node cluster rather than use your locally installed Docker.
 
-#####################################################3
+#####################################################
