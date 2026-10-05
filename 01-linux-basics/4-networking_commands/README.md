@@ -40,10 +40,16 @@ lahiru@DuelHunter:/mnt/d/linux-to-eBPF-lab$ ip a
 
 - `inet` = IPv4 address, `inet6` = IPv6 address.
 - `lo` is the loopback interface (`127.0.0.1`), always present, used for local-only traffic.
-
+- There are two IPs here for the lo. Second IP address is used for special internal networking in the WSL environment.
 
 
 ### `ip route` (or `route -n`)
+
+```bash
+   lahiru@DuelHunter:/mnt/d/linux-to-eBPF-lab$ ip route
+   default via 172.27.128.1 dev eth0 proto kernel 
+   172.27.128.0/20 dev eth0 proto kernel scope link src 172.27.137.201 
+```
 
 - Shows the routing table: which gateway/interface traffic goes out through for
    a given destination.

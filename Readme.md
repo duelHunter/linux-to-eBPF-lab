@@ -128,6 +128,7 @@ Topics:
 - TCP handshake
 - UDP
 - Socket programming
+- Reverse proxy and load balancing (nginx)
 
 Tools:
 
