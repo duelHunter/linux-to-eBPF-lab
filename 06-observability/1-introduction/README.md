@@ -19,6 +19,8 @@ data to work out *what* and *why*, even for a problem you have never seen.
 Quick test: can I explain a new failure without changing the code or adding
 new tools first?
 
+![When to use monitoring vs observability](difference.png)
+
 ---
 
 ## 2. The three pillars
@@ -127,17 +129,6 @@ journalctl -u nginx -n 5
 
 # system metrics straight from the kernel
 cat /proc/loadavg
-```
-
----
-
-## 7. Roadmap for this folder
-
-```bash
-1-introduction   <- you are here
-2-metrics        what metrics are, types, time series
-3-prometheus     collecting and querying metrics
-4-grafana        dashboards and alerts
 ```
 
 Logs and tracing are covered later, and the kernel layer is covered in the
