@@ -127,7 +127,7 @@ An application can expose its own metrics, usually as plain text on an HTTP
 endpoint such as `/metrics`:
 
 ```bash
-curl http://localhost:3000/metrics
+curl http://localhost:8000/metrics
 ```
 
 ```bash
@@ -137,13 +137,14 @@ http_requests_total{method="GET",path="/"} 42
 ```
 
 This text format is what Prometheus reads (next section). For the Node app in
-`server/`, the `prom-client` package can generate it:
+`server/`, the `@prometheus-io/client` package (the new name of
+`prom-client`) can generate it:
 
 ```bash
-npm install prom-client
+npm install @prometheus-io/client
 ```
 
-Do this as the exercise in the Prometheus section.
+The `server/` app already exposes `/metrics` this way.
 
 ---
 
